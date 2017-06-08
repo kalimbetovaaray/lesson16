@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Таймеры</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript">
+		function timer() {
+			var s = Number(document.getElementById("timer").innerHTML);
+			s++;
+			document.getElementById("timer").innerHTML = s;
+			setTimeout("timer()", 1000);
+		}
+	</script>
+</head>
+<body onload="timer()">
+	<script type="text/javascript">
+		//var id = setInterval("myFunc1()", 1000);
+		var counter_1 = 0;
+		function myFunc1() {
+			counter_1++;
+			alert("Прошло секунд: " + counter_1);
+			if (counter_1 == 5) clearInterval(id);
+		}
+		
+		var counter_2 = 0;
+		function myFunc2() {
+			counter_2++;
+			alert("Прошло секунд: " + counter_2);
+			if (counter_2 < 5) setTimeout("myFunc2()", 1000);
+		}
+		//myFunc2();
+	</script>
+	Прошло <span id = "timer">-1</span> сек.
+</body>
+</html>
