@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+	<title>Таймеры</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript">
+		function timer() {
+			var m = Number(document.getElementById("timer").innerHTML);
+			m++;
+			if (m < 10) {
+				m = "0" + m;
+			}
+			document.getElementById("timer").innerHTML = m;
+			setTimeout("timer()", 60000);
+		}
+		function timer_1() {
+			var s = Number(document.getElementById("timer_1").innerHTML);
+			if(s == 60){
+			s = 0;
+			}
+			s++;
+			if (s < 10) {
+				s = "0" + s;
+			}
+			document.getElementById("timer_1").innerHTML = s;
+			setTimeout("timer_1()", 1000);
+		}
+	</script>
+</head>
+<body onload="timer(), timer_1()">
+	Прошло <span id = "timer">-1</span>:<span id = "timer_1">-1</span>
+</body>
+</html>
